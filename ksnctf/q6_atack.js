@@ -1,5 +1,5 @@
 const axios = require("axios").default;
-const http = require("http");
+// const http = require("http");
 
 const httpRequest = async (id = "admin", pass = "FLAG_KpWa4ji3uZk6TrPK") => {
   const params = new URLSearchParams();
@@ -10,8 +10,9 @@ const httpRequest = async (id = "admin", pass = "FLAG_KpWa4ji3uZk6TrPK") => {
     params,
     {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      proxy: false, // ref. https://stackoverflow.com/questions/43433380/socket-hang-up-when-using-axios-get-but-not-when-using-https-get/43439886#43439886
-      httpAgent: new http.Agent({ keepAlive: true }), // ref. https://github.com/axios/axios/issues/1846
+      // ↓ 効果なし
+      // proxy: false, // ref. https://stackoverflow.com/questions/43433380/socket-hang-up-when-using-axios-get-but-not-when-using-https-get/43439886#43439886
+      // httpAgent: new http.Agent({ keepAlive: true }), // ref. https://github.com/axios/axios/issues/1846
     }
   );
   return response.data;
@@ -33,6 +34,7 @@ const isCorrectResponse = (res) => {
 // })();
 
 // 本番
+// FIXME: axios postが途中でhang outする
 (async () => {
   // 21文字で総当たり
   // FLAG_{16文字}
