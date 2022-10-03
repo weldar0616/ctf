@@ -1,0 +1,16 @@
+{
+  "name": "ksnctf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "q3_unya.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.27.2",
+    "http": "^0.0.1-security"
+  }
+}
